@@ -62,3 +62,21 @@ Run a pipeline check: train on 20 examples for one epoch.
 Run LoRA and QLoRA with few seeds.
 Run the rank and module comparisons if time allows.
 Compile results and write the report.
+
+## Example
+
+Setup: Colab, T4 GPU, install libraries, log in to Hugging Face.
+
+Data: Build training examples from Lahman stats with code, plus hand-written rules questions. Freeze 100 test items before training. Check for overlap.
+
+Baseline: Run Gemma 3 1B on the test set, zero-shot and few shot. Save scores.
+
+Pipeline check: Train on 20 examples for one epoch. Confirm the loss drops and scoring runs.
+
+Train: LoRA (rank 8, q_proj and v_proj), then QLoRA (same, 4-bit). Use 300 examples, 3 epochs, learning rate 2e-4. Log time, memory, and accuracy.
+
+Seeds: Repeat with few more seeds.
+
+Compare: Report mean and standard deviation. Check if LoRA beats the baseline by more than the spread.
+
+Write up: Describe data, methods, results, and the limit that stats questions test calculation, not baseball knowledge.
