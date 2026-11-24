@@ -1,0 +1,13 @@
+# Data pipeline + scoring (no GPU needed)
+pandas
+pytest
+
+# Training / evaluation (src/lora_exp.py). Colab already has torch.
+# Local GPU install: pip install torch --index-url https://download.pytorch.org/whl/cu128
+torch
+transformers>=4.50   # Gemma 3 support
+peft
+accelerate
+bitsandbytes         # QLoRA (CUDA only)
+scipy                # McNemar test
+packaging

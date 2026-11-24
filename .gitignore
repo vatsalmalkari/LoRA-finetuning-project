@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Raw Lahman CSVs (download from SABR; CC BY-SA 3.0, too large to commit)
+data/raw/lahman/*.csv
+data/raw/lahman/*.zip
+
+# Pipeline-check splits built from unverified rules (the real split in data/processed/ IS committed)
+data/processed/unverified/
+
+# Excel lock files while the review sheet is open
+~$*.xlsx
+
+# Model artifacts
+results/**/adapter_model.safetensors
+results/**/checkpoint-*/
+results/**/*.bin

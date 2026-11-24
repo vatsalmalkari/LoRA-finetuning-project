@@ -1,0 +1,7 @@
+# The frozen test set is checked by its SHA-256 (data/processed/test.sha256).
+# Never let git convert line endings in it (core.autocrlf would break the hash on Windows).
+data/processed/*.jsonl -text
+data/processed/*.sha256 -text
+
+# Keep generated JSON with LF endings everywhere.
+data/raw/rules_mc.json text eol=lf
