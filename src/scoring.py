@@ -43,9 +43,23 @@ def normalize(text: str) -> str:
     return re.sub(r"^the ", "", text)
 
 
+_FENCE_LINE = re.compile(r"^\s*(```|~~~)[\w+-]*\s*$")
+
+
+def strip_markdown(response: str) -> str:
+    """Remove formatting that is not part of the answer itself.
+
+    Drops code-fence lines (```, ```python, ~~~) and all backticks and bold/italic
+    asterisks, so '```\\n0.287\\n```', '`0.287`' and '**Answer:** B' are judged on
+    their content. Strict scoring should penalise wrong or wordy answers, not markdown.
+    """
+    lines = [ln for ln in response.splitlines() if not _FENCE_LINE.match(ln)]
+    return "\n".join(lines).replace("`", "").replace("*", "")
+
+
 def first_line(response: str) -> str:
-    for line in response.strip().splitlines():
-        line = line.strip().strip("*").strip()
+    for line in strip_markdown(response).strip().splitlines():
+        line = line.strip()
         if line:
             return _PREFIX.sub("", line).strip()
     return ""
@@ -63,7 +77,7 @@ def extract_mc_lenient(response: str) -> str | None:
     strict = extract_mc_strict(response)
     if strict:
         return strict
-    text = response.strip()
+    text = strip_markdown(response).strip()
     patterns = [
         r"answer\s*(?:is|:)\s*\(?([A-D])\b",
         r"^\(?([A-D])[\).:]\s",          # "B) Four balls" / "B. Four balls"

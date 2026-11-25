@@ -80,6 +80,34 @@ def test_stats_wrong(resp):
     assert not score(STATS, resp)["lenient"]
 
 
+@pytest.mark.parametrize("resp", [
+    "```\n0.287\n```",            # seen from Gemma 3 in the Colab pipeline check
+    "```text\n0.287\n```",
+    "`0.287`",
+    "**0.287**",
+    "**Answer:** 0.287",
+])
+def test_stats_markdown_is_not_penalised(resp):
+    assert score(STATS, resp)["strict"]
+
+
+@pytest.mark.parametrize("resp", ["```\nB\n```", "`B`", "**Answer:** B", "```\nB)\n```"])
+def test_mc_markdown_is_not_penalised(resp):
+    assert score(MC, resp)["strict"]
+
+
+@pytest.mark.parametrize("resp", ["```\nNew York Mets\n```", "`Mets`", "**New York Mets**"])
+def test_short_markdown_is_not_penalised(resp):
+    assert score(SHORT, resp)["strict"]
+
+
+def test_markdown_does_not_rescue_wordy_or_wrong_answers():
+    assert not score(STATS, "```\nThe batting average is 0.287\n```")["strict"]
+    assert score(STATS, "```\nThe batting average is 0.287\n```")["lenient"]
+    assert not score(STATS, "```\n0.6277\n```")["lenient"]
+    assert not score(MC, "```\nA walk happens after four balls.\n```")["lenient"]
+
+
 def test_number_ok_two_decimals():
     assert number_ok(3.46, 3.4567, 2)
     assert not number_ok(3.48, 3.4567, 2)
