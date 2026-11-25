@@ -193,3 +193,20 @@ def test_summarize_and_mcnemar(setup):
     b = json.loads((setup["out"] / f"{lora_name}.predictions.json").read_text())["zero_shot"]
     t = lx.mcnemar(a, b)
     assert t["n_items"] == len(setup["data"]["test"]) and 0 <= t["p_value"] <= 1
+
+
+def test_adapter_loads_for_subspace_analysis(setup, tmp_path):
+    """analysis.py reads lora_A from the adapters lora_exp saves (real PEFT key names)."""
+    import analysis as an
+    r8 = lx.run(lx.RunConfig("lora", lr=5e-3, precision="fp32", epochs=1), setup["data"], tmp_path,
+                model_id=setup["model_id"], log=lambda *_: None, latency=False)
+    r16 = lx.run(lx.RunConfig("lora", rank=16, alpha=32, lr=5e-3, precision="fp32", epochs=1), setup["data"],
+                 tmp_path, model_id=setup["model_id"], log=lambda *_: None, latency=False)
+    a8, a16 = tmp_path / "adapters" / r8["name"], tmp_path / "adapters" / r16["name"]
+    A = an.load_lora_A(a8)
+    n_layers = 4                                   # tiny model in `setup`
+    assert set(A) == {(l, m) for l in range(n_layers) for m in ("q_proj", "v_proj")}
+    assert A[(0, "q_proj")].shape == (8, 128)      # (rank, hidden_size)
+    sim = an.subspace_similarity(a8, a16)
+    P = sim["phi"]["q_proj"]
+    assert P.shape == (8, 16) and P.min() >= -1e-9 and P.max() <= 1 + 1e-9

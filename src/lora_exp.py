@@ -489,9 +489,12 @@ def summarize(out_dir: str | Path, split: str = "test"):
     rows = []
     for r in load_results(out_dir, split):
         c = r["config"]
+        is_lora = c["method"] in ("lora", "qlora")
+        rank = c["rank"] if is_lora else "-"            # rank/targets only mean something for LoRA
+        targets = "+".join(c["targets"]) if is_lora else "-"
         if r.get("oom"):
             rows.append({"config": r["name"], "method": c["method"], "prompt": "OOM",
-                         "rank": c["rank"], "targets": "+".join(c["targets"]), "seed": c["seed"],
+                         "rank": rank, "targets": targets, "seed": c["seed"],
                          "peak_mem_gb": r.get("peak_mem_gb")})
             continue
         settings = [("zero_shot", r["accuracy"])]
@@ -499,8 +502,8 @@ def summarize(out_dir: str | Path, split: str = "test"):
             settings.append(("few_shot", r["accuracy_fewshot"]))
         for prompt, acc in settings:
             row = {"config": r["name"].replace(f"_s{c['seed']}", "") if c["method"] != "base" else "base",
-                   "method": c["method"], "prompt": prompt, "rank": c["rank"],
-                   "targets": "+".join(c["targets"]), "seed": c["seed"],
+                   "method": c["method"], "prompt": prompt, "rank": rank,
+                   "targets": targets, "seed": c["seed"],
                    "trainable_params": r["trainable_params"],
                    "trainable_pct": r.get("trainable_pct", 0.0),
                    "train_min": r.get("train", {}).get("train_seconds", float("nan")) / 60,
