@@ -75,8 +75,22 @@ def _config(method, rank=8, targets=("q_proj", "v_proj"), seed=1, lr=2e-4, tag="
             "lr": lr, "n_train": n_train, "tag": tag}
 
 
+def _accuracy(preds):
+    """The `accuracy` block lora_exp.run writes: {group: {n, strict, lenient}}."""
+    out = {}
+    for g in ["all", "mc", "short", "stats"]:
+        sel = [p for p in preds if g == "all" or p["qtype"] == g]
+        if sel:
+            out[g] = {"n": len(sel), "strict": float(np.mean([p["strict"] for p in sel])),
+                      "lenient": float(np.mean([p["lenient"] for p in sel]))}
+    return out
+
+
 def _write(out, name, result, preds):
     out.mkdir(parents=True, exist_ok=True)
+    result = {**result, "accuracy": _accuracy(preds["zero_shot"])}
+    if "few_shot" in preds:
+        result["accuracy_fewshot"] = _accuracy(preds["few_shot"])
     (out / f"{name}.json").write_text(json.dumps(result), encoding="utf-8")
     (out / f"{name}.predictions.json").write_text(json.dumps(preds), encoding="utf-8")
 
@@ -108,5 +122,6 @@ def make_results(out: Path, spec=DEFAULT_SPEC, base=(0.14, 0.17), seed=0, extras
                                                       "eval_split": "val", "config": _config("lora")},
                {"zero_shot": []})
         (out / "orphan_no_predictions.json").write_text(json.dumps(
-            {"name": "orphan", "config": _config("lora", seed=5), "eval_split": "test", "trainable_params": 1}))
+            {"name": "orphan", "config": _config("lora", seed=5), "eval_split": "test", "trainable_params": 1,
+             "accuracy": {"all": {"n": 1, "strict": 0.0, "lenient": 0.0}}}))
     return items
