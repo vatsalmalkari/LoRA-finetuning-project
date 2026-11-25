@@ -1,0 +1,2006 @@
+{
+ "zero_shot": [
+  {
+   "id": "test-short-002",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Bret Saberhagen",
+   "response": "Sandy Koufax",
+   "strict": false,
+   "lenient": false,
+   "extracted": "sandy koufax"
+  },
+  {
+   "id": "test-stats-025",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.220",
+   "response": "0.2866",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.2866"
+  },
+  {
+   "id": "test-mc-030",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "D",
+   "response": "C",
+   "strict": false,
+   "lenient": false,
+   "extracted": "C"
+  },
+  {
+   "id": "test-mc-019",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "A",
+   "response": "B",
+   "strict": false,
+   "lenient": false,
+   "extracted": "B"
+  },
+  {
+   "id": "test-short-026",
+   "qtype": "short",
+   "source": "history",
+   "answer": "St. Louis Cardinals",
+   "response": "New York Yankees",
+   "strict": false,
+   "lenient": false,
+   "extracted": "new york yankees"
+  },
+  {
+   "id": "test-stats-020",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "3.34",
+   "response": "Let $E$ be the number of earned runs Joe Niekro allowed, and let $I$ be the number of innings pitched.\nWe are given",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-mc-021",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "D",
+   "response": "B",
+   "strict": false,
+   "lenient": false,
+   "extracted": "B"
+  },
+  {
+   "id": "test-stats-010",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.525",
+   "response": "Let $S$ be the number of singles, $D$ be the number of doubles, $T$ be the number of triples, and $H$",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-short-028",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Los Angeles Dodgers",
+   "response": "New York Yankees",
+   "strict": false,
+   "lenient": false,
+   "extracted": "new york yankees"
+  },
+  {
+   "id": "test-short-009",
+   "qtype": "short",
+   "source": "history",
+   "answer": "George Foster",
+   "response": "Willie Mays",
+   "strict": false,
+   "lenient": false,
+   "extracted": "willie mays"
+  },
+  {
+   "id": "test-short-005",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Jake Daubert",
+   "response": "Babe Ruth",
+   "strict": false,
+   "lenient": false,
+   "extracted": "babe ruth"
+  },
+  {
+   "id": "test-mc-009",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "B",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-022",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Eric Karros",
+   "response": "Mike Cameron",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike cameron"
+  },
+  {
+   "id": "test-stats-029",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "2.49",
+   "response": "Let $E$ be the number of earned runs Jeff Shaw allowed, and let $I$ be the number of innings pitched.\nWe are given that $",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-short-033",
+   "qtype": "short",
+   "source": "history",
+   "answer": "San Francisco Giants",
+   "response": "Houston Astros",
+   "strict": false,
+   "lenient": false,
+   "extracted": "houston astros"
+  },
+  {
+   "id": "test-stats-015",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "1.52",
+   "response": "WHIP = (Hits Allowed - Walks Allowed) / (Total Innings Pitched)\n\nIn this case:\nHits Allowed = 195",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-stats-033",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.408",
+   "response": "To calculate Kyle Tucker's on-base percentage, we need to find the total number of at-bats, hits, walks, and hits-by-",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-short-011",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Andre Dawson",
+   "response": "Mike Crawford",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike crawford"
+  },
+  {
+   "id": "test-mc-018",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "B",
+   "strict": false,
+   "lenient": false,
+   "extracted": "B"
+  },
+  {
+   "id": "test-stats-018",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.314",
+   "response": "To calculate Dan Meyer's on-base percentage, we need to divide the number of hits by the number of at-bats.\nOn-base percentage",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-mc-017",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "B",
+   "response": "C",
+   "strict": false,
+   "lenient": false,
+   "extracted": "C"
+  },
+  {
+   "id": "test-short-015",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Chipper Jones",
+   "response": "Mike Cameron",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike cameron"
+  },
+  {
+   "id": "test-stats-014",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "5.71",
+   "response": "Let $K$ be the number of strikeouts and $I$ be the number of innings pitched.\nWe are given that Jim Kern struck out 66",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-stats-013",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "4.40",
+   "response": "Let $K$ be the number of strikeouts and $I$ be the number of innings pitched.\nWe are given that John Henry Johnson struck out 9",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-stats-007",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.239",
+   "response": "0.4333",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.4333"
+  },
+  {
+   "id": "test-short-032",
+   "qtype": "short",
+   "source": "history",
+   "answer": "St. Louis Cardinals",
+   "response": "New York Yankees",
+   "strict": false,
+   "lenient": false,
+   "extracted": "new york yankees"
+  },
+  {
+   "id": "test-mc-024",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "test-short-023",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Kyle Lewis",
+   "response": "Shohei Ohtani",
+   "strict": false,
+   "lenient": false,
+   "extracted": "shohei ohtani"
+  },
+  {
+   "id": "test-mc-020",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-012",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Barry Bonds",
+   "response": "Mike Crawford",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike crawford"
+  },
+  {
+   "id": "test-stats-004",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.348",
+   "response": "Let $S$ be the number of singles, $D$ be the number of doubles, $T$ be the number of triples, and $H$",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-mc-033",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "A)",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-stats-026",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "7.37",
+   "response": "Let $K$ be the number of strikeouts and $I$ be the number of innings pitched.\nWe are given that CC Sabathia struck out",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-mc-016",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-stats-021",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.330",
+   "response": "194 hits / 587 at-bats = 0.3296\n\n0.3296 rounded to 3 decimal",
+   "strict": false,
+   "lenient": true,
+   "extracted": "194.0"
+  },
+  {
+   "id": "test-stats-031",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "1.35",
+   "response": "Let $H$ be the number of hits, $W$ be the number of walks, and $I$ be the number of innings pitched.\nWe",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-stats-011",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.365",
+   "response": "0.3333",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.3333"
+  },
+  {
+   "id": "test-mc-013",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "B",
+   "response": "B",
+   "strict": true,
+   "lenient": true,
+   "extracted": "B"
+  },
+  {
+   "id": "test-stats-027",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "4.17",
+   "response": "Let $K$ be the number of strikeouts and $I$ be the number of innings pitched.\nWe are given that Bret Saberhagen struck out 7",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-mc-004",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "D",
+   "strict": true,
+   "lenient": true,
+   "extracted": "D"
+  },
+  {
+   "id": "test-stats-009",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "4.57",
+   "response": "Let $E$ be the number of earned runs Ron Herbel allowed, and let $I$ be the number of innings pitched.\nWe are given that",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-short-031",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Florida Marlins",
+   "response": "New York Yankees",
+   "strict": false,
+   "lenient": false,
+   "extracted": "new york yankees"
+  },
+  {
+   "id": "test-short-008",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Yogi Berra",
+   "response": "Babe Ruth",
+   "strict": false,
+   "lenient": false,
+   "extracted": "babe ruth"
+  },
+  {
+   "id": "test-stats-002",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "1.53",
+   "response": "100 innings pitched / 105 hits = 0.945\nWHIP = 0.945\n\nFinal Answer:",
+   "strict": false,
+   "lenient": false,
+   "extracted": "100.0"
+  },
+  {
+   "id": "test-stats-001",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "4.46",
+   "response": "Let $S$ be the number of strikeouts and $I$ be the number of innings pitched.\nWe are given that Jim Abbott struck out 10",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-short-019",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Ryan Braun",
+   "response": "Mike Trout",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike trout"
+  },
+  {
+   "id": "test-mc-014",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "C",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-mc-027",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-001",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Tom Seaver",
+   "response": "Sandy Koufax",
+   "strict": false,
+   "lenient": false,
+   "extracted": "sandy koufax"
+  },
+  {
+   "id": "test-short-010",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Mike Schmidt",
+   "response": "Mike Crawford",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike crawford"
+  },
+  {
+   "id": "test-stats-030",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "3.87",
+   "response": "ERA = Earned Runs / Innings Pitched\nERA = 96 / 223.33\nERA = 0.42",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-stats-028",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.623",
+   "response": "Let $S$ be the number of singles, $D$ be the number of doubles, $T$ be the number of triples, and $H$",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-short-024",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Chicago White Sox",
+   "response": "New York Yankees",
+   "strict": false,
+   "lenient": false,
+   "extracted": "new york yankees"
+  },
+  {
+   "id": "test-mc-025",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "A",
+   "response": "C",
+   "strict": false,
+   "lenient": false,
+   "extracted": "C"
+  },
+  {
+   "id": "test-short-016",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Jeff Kent",
+   "response": "Mike Crawford",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike crawford"
+  },
+  {
+   "id": "test-stats-032",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.190",
+   "response": "58 hits / 306 at-bats = 0.1947\n\n0.  1947 rounded to 3 decimal",
+   "strict": false,
+   "lenient": false,
+   "extracted": "58.0"
+  },
+  {
+   "id": "test-stats-024",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.349",
+   "response": "To calculate Scott Rolen's on-base percentage, we need to divide the number of bases he reached by the total number of at-bats.",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-stats-016",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.282",
+   "response": "Let $S$ be the number of singles, $D$ be the number of doubles, $T$ be the number of triples, $H$ be",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-mc-001",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "B",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "test-short-029",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Detroit Tigers",
+   "response": "New York Yankees",
+   "strict": false,
+   "lenient": false,
+   "extracted": "new york yankees"
+  },
+  {
+   "id": "test-mc-028",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "A",
+   "response": "A",
+   "strict": true,
+   "lenient": true,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-013",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Barry Bonds",
+   "response": "Mike Crawford",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike crawford"
+  },
+  {
+   "id": "test-mc-015",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "A",
+   "response": "A",
+   "strict": true,
+   "lenient": true,
+   "extracted": "A"
+  },
+  {
+   "id": "test-mc-008",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "A",
+   "response": "A",
+   "strict": true,
+   "lenient": true,
+   "extracted": "A"
+  },
+  {
+   "id": "test-mc-010",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "A",
+   "response": "A",
+   "strict": true,
+   "lenient": true,
+   "extracted": "A"
+  },
+  {
+   "id": "test-mc-011",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "B",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-030",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Oakland Athletics",
+   "response": "New York Yankees",
+   "strict": false,
+   "lenient": false,
+   "extracted": "new york yankees"
+  },
+  {
+   "id": "test-stats-022",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "5.81",
+   "response": "ERA = Earned Runs / Innings Pitched\nERA = 73 / 113\nERA = 0.650\nTherefore",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-mc-003",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "A",
+   "response": "A",
+   "strict": true,
+   "lenient": true,
+   "extracted": "A"
+  },
+  {
+   "id": "test-stats-008",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "1.41",
+   "response": "WHIP = Hits / Innings Pitched = 195 / 195.25 = 0.9999 =",
+   "strict": false,
+   "lenient": false,
+   "extracted": "195.0"
+  },
+  {
+   "id": "test-mc-023",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "B",
+   "response": "C",
+   "strict": false,
+   "lenient": false,
+   "extracted": "C"
+  },
+  {
+   "id": "test-mc-032",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "C",
+   "strict": false,
+   "lenient": false,
+   "extracted": "C"
+  },
+  {
+   "id": "test-mc-022",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "A",
+   "response": "A",
+   "strict": true,
+   "lenient": true,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-017",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Barry Bonds",
+   "response": "Mike Cameron",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike cameron"
+  },
+  {
+   "id": "test-short-018",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Jimmy Rollins",
+   "response": "Mike Trout",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike trout"
+  },
+  {
+   "id": "test-stats-006",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.264",
+   "response": "65 hits / 246 at-bats = 0.2657\n\n0.  2657 rounded to 3 decimal",
+   "strict": false,
+   "lenient": false,
+   "extracted": "65.0"
+  },
+  {
+   "id": "test-mc-012",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "B",
+   "response": "B",
+   "strict": true,
+   "lenient": true,
+   "extracted": "B"
+  },
+  {
+   "id": "test-short-006",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Ted Williams",
+   "response": "Babe Ruth",
+   "strict": false,
+   "lenient": false,
+   "extracted": "babe ruth"
+  },
+  {
+   "id": "test-mc-007",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-stats-012",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "1.49",
+   "response": "WHIP = Hits + Walks / Innings Pitched\n\nWHIP = 104 + 46 / 100.5\n\nWH",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-stats-034",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "4.61",
+   "response": "Let $K$ be the number of strikeouts and $I$ be the number of innings pitched.\nWe are given that Mark Williamson struck out 55",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-short-004",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Roy Halladay",
+   "response": "Clayton Kershaw",
+   "strict": false,
+   "lenient": false,
+   "extracted": "clayton kershaw"
+  },
+  {
+   "id": "test-stats-005",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.403",
+   "response": "Let $S$ be the number of singles, $D$ be the number of doubles, $T$ be the number of triples, and $H$",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-stats-019",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.296",
+   "response": "To calculate Jose Molina's on-base percentage, we need to find the total number of bases he reached.\nHe had 53 hits,",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-mc-002",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "C",
+   "response": "C",
+   "strict": true,
+   "lenient": true,
+   "extracted": "C"
+  },
+  {
+   "id": "test-stats-023",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.254",
+   "response": "0.2357",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.2357"
+  },
+  {
+   "id": "test-mc-029",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "B",
+   "response": "B",
+   "strict": true,
+   "lenient": true,
+   "extracted": "B"
+  },
+  {
+   "id": "test-short-003",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Pedro Martinez",
+   "response": "Randy Johnson",
+   "strict": false,
+   "lenient": false,
+   "extracted": "randy johnson"
+  },
+  {
+   "id": "test-stats-003",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.320",
+   "response": "0.3333",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.3333"
+  },
+  {
+   "id": "test-mc-005",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "A",
+   "response": "A",
+   "strict": true,
+   "lenient": true,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-021",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Ozzie Guillen",
+   "response": "Mike Cameron",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike cameron"
+  },
+  {
+   "id": "test-mc-031",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "C",
+   "strict": false,
+   "lenient": false,
+   "extracted": "C"
+  },
+  {
+   "id": "test-short-025",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Chicago Cubs",
+   "response": "New York Giants",
+   "strict": false,
+   "lenient": false,
+   "extracted": "new york giants"
+  },
+  {
+   "id": "test-short-027",
+   "qtype": "short",
+   "source": "history",
+   "answer": "New York Yankees",
+   "response": "New York Yankees",
+   "strict": true,
+   "lenient": true,
+   "extracted": "new york yankees"
+  },
+  {
+   "id": "test-stats-017",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "4.33",
+   "response": "Let $E$ be the number of earned runs Jon Lieber allowed, and let $I$ be the number of innings pitched.\nWe are given that $",
+   "strict": false,
+   "lenient": false,
+   "extracted": null
+  },
+  {
+   "id": "test-mc-026",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "C",
+   "strict": true,
+   "lenient": true,
+   "extracted": "C"
+  },
+  {
+   "id": "test-short-020",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Ron Kittle",
+   "response": "Mike Donewalski",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike donewalski"
+  },
+  {
+   "id": "test-mc-006",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-014",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Frank Thomas",
+   "response": "Alex Rodriguez",
+   "strict": false,
+   "lenient": false,
+   "extracted": "alex rodriguez"
+  },
+  {
+   "id": "test-short-007",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Jackie Robinson",
+   "response": "Babe Ruth",
+   "strict": false,
+   "lenient": false,
+   "extracted": "babe ruth"
+  }
+ ],
+ "few_shot": [
+  {
+   "id": "test-short-002",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Bret Saberhagen",
+   "response": "Mike Hamilton",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike hamilton"
+  },
+  {
+   "id": "test-stats-025",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.220",
+   "response": "0.315",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.315"
+  },
+  {
+   "id": "test-mc-030",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "D",
+   "response": "B",
+   "strict": false,
+   "lenient": false,
+   "extracted": "B"
+  },
+  {
+   "id": "test-mc-019",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "A",
+   "response": "A",
+   "strict": true,
+   "lenient": true,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-026",
+   "qtype": "short",
+   "source": "history",
+   "answer": "St. Louis Cardinals",
+   "response": "New York Yankees",
+   "strict": false,
+   "lenient": false,
+   "extracted": "new york yankees"
+  },
+  {
+   "id": "test-stats-020",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "3.34",
+   "response": "3.78",
+   "strict": false,
+   "lenient": false,
+   "extracted": "3.78"
+  },
+  {
+   "id": "test-mc-021",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "D",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-stats-010",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.525",
+   "response": "0.535",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.535"
+  },
+  {
+   "id": "test-short-028",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Los Angeles Dodgers",
+   "response": "New York Yankees",
+   "strict": false,
+   "lenient": false,
+   "extracted": "new york yankees"
+  },
+  {
+   "id": "test-short-009",
+   "qtype": "short",
+   "source": "history",
+   "answer": "George Foster",
+   "response": "Roberto Clemente",
+   "strict": false,
+   "lenient": false,
+   "extracted": "roberto clemente"
+  },
+  {
+   "id": "test-short-005",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Jake Daubert",
+   "response": "Babe Ruth",
+   "strict": false,
+   "lenient": false,
+   "extracted": "babe ruth"
+  },
+  {
+   "id": "test-mc-009",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "B",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-022",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Eric Karros",
+   "response": "Mike Schmidt",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike schmidt"
+  },
+  {
+   "id": "test-stats-029",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "2.49",
+   "response": "3.83",
+   "strict": false,
+   "lenient": false,
+   "extracted": "3.83"
+  },
+  {
+   "id": "test-short-033",
+   "qtype": "short",
+   "source": "history",
+   "answer": "San Francisco Giants",
+   "response": "Houston Astros",
+   "strict": false,
+   "lenient": false,
+   "extracted": "houston astros"
+  },
+  {
+   "id": "test-stats-015",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "1.52",
+   "response": "1.18",
+   "strict": false,
+   "lenient": false,
+   "extracted": "1.18"
+  },
+  {
+   "id": "test-stats-033",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.408",
+   "response": "0.311",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.311"
+  },
+  {
+   "id": "test-short-011",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Andre Dawson",
+   "response": "Mike Hamilton",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike hamilton"
+  },
+  {
+   "id": "test-mc-018",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "C",
+   "strict": true,
+   "lenient": true,
+   "extracted": "C"
+  },
+  {
+   "id": "test-stats-018",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.314",
+   "response": "0.323",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.323"
+  },
+  {
+   "id": "test-mc-017",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "B",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-015",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Chipper Jones",
+   "response": "Mike Piazza",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike piazza"
+  },
+  {
+   "id": "test-stats-014",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "5.71",
+   "response": "4.28",
+   "strict": false,
+   "lenient": false,
+   "extracted": "4.28"
+  },
+  {
+   "id": "test-stats-013",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "4.40",
+   "response": "6.83",
+   "strict": false,
+   "lenient": false,
+   "extracted": "6.83"
+  },
+  {
+   "id": "test-stats-007",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.239",
+   "response": "0.316",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.316"
+  },
+  {
+   "id": "test-short-032",
+   "qtype": "short",
+   "source": "history",
+   "answer": "St. Louis Cardinals",
+   "response": "San Francisco Giants",
+   "strict": false,
+   "lenient": false,
+   "extracted": "san francisco giants"
+  },
+  {
+   "id": "test-mc-024",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "test-short-023",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Kyle Lewis",
+   "response": "Yoshinobu Yamamoto",
+   "strict": false,
+   "lenient": false,
+   "extracted": "yoshinobu yamamoto"
+  },
+  {
+   "id": "test-mc-020",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-012",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Barry Bonds",
+   "response": "Mike Hamilton",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike hamilton"
+  },
+  {
+   "id": "test-stats-004",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.348",
+   "response": "0.367",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.367"
+  },
+  {
+   "id": "test-mc-033",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "D",
+   "strict": true,
+   "lenient": true,
+   "extracted": "D"
+  },
+  {
+   "id": "test-stats-026",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "7.37",
+   "response": "14.53",
+   "strict": false,
+   "lenient": false,
+   "extracted": "14.53"
+  },
+  {
+   "id": "test-mc-016",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "C",
+   "strict": true,
+   "lenient": true,
+   "extracted": "C"
+  },
+  {
+   "id": "test-stats-021",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.330",
+   "response": "0.317",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.317"
+  },
+  {
+   "id": "test-stats-031",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "1.35",
+   "response": "1.18",
+   "strict": false,
+   "lenient": false,
+   "extracted": "1.18"
+  },
+  {
+   "id": "test-stats-011",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.365",
+   "response": "0.311",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.311"
+  },
+  {
+   "id": "test-mc-013",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "B",
+   "response": "B",
+   "strict": true,
+   "lenient": true,
+   "extracted": "B"
+  },
+  {
+   "id": "test-stats-027",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "4.17",
+   "response": "10.7",
+   "strict": false,
+   "lenient": false,
+   "extracted": "10.7"
+  },
+  {
+   "id": "test-mc-004",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-stats-009",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "4.57",
+   "response": "3.77",
+   "strict": false,
+   "lenient": false,
+   "extracted": "3.77"
+  },
+  {
+   "id": "test-short-031",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Florida Marlins",
+   "response": "Oakland Athletics",
+   "strict": false,
+   "lenient": false,
+   "extracted": "oakland athletics"
+  },
+  {
+   "id": "test-short-008",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Yogi Berra",
+   "response": "Willie Mays",
+   "strict": false,
+   "lenient": false,
+   "extracted": "willie mays"
+  },
+  {
+   "id": "test-stats-002",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "1.53",
+   "response": "1.13",
+   "strict": false,
+   "lenient": false,
+   "extracted": "1.13"
+  },
+  {
+   "id": "test-stats-001",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "4.46",
+   "response": "10.23",
+   "strict": false,
+   "lenient": false,
+   "extracted": "10.23"
+  },
+  {
+   "id": "test-short-019",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Ryan Braun",
+   "response": "Mike Trout",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike trout"
+  },
+  {
+   "id": "test-mc-014",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "C",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-mc-027",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-001",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Tom Seaver",
+   "response": "Mike Hamilton",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike hamilton"
+  },
+  {
+   "id": "test-short-010",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Mike Schmidt",
+   "response": "Mike Hamilton",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike hamilton"
+  },
+  {
+   "id": "test-stats-030",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "3.87",
+   "response": "3.77",
+   "strict": false,
+   "lenient": false,
+   "extracted": "3.77"
+  },
+  {
+   "id": "test-stats-028",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.623",
+   "response": "0.538",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.538"
+  },
+  {
+   "id": "test-short-024",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Chicago White Sox",
+   "response": "New York Giants",
+   "strict": false,
+   "lenient": false,
+   "extracted": "new york giants"
+  },
+  {
+   "id": "test-mc-025",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "A",
+   "response": "C",
+   "strict": false,
+   "lenient": false,
+   "extracted": "C"
+  },
+  {
+   "id": "test-short-016",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Jeff Kent",
+   "response": "Mike Piazza",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike piazza"
+  },
+  {
+   "id": "test-stats-032",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.190",
+   "response": "0.315",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.315"
+  },
+  {
+   "id": "test-stats-024",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.349",
+   "response": "0.311",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.311"
+  },
+  {
+   "id": "test-stats-016",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.282",
+   "response": "0.363",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.363"
+  },
+  {
+   "id": "test-mc-001",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "B",
+   "response": "B",
+   "strict": true,
+   "lenient": true,
+   "extracted": "B"
+  },
+  {
+   "id": "test-short-029",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Detroit Tigers",
+   "response": "New York Yankees",
+   "strict": false,
+   "lenient": false,
+   "extracted": "new york yankees"
+  },
+  {
+   "id": "test-mc-028",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "A",
+   "response": "A",
+   "strict": true,
+   "lenient": true,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-013",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Barry Bonds",
+   "response": "Mike Schmidt",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike schmidt"
+  },
+  {
+   "id": "test-mc-015",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "A",
+   "response": "A",
+   "strict": true,
+   "lenient": true,
+   "extracted": "A"
+  },
+  {
+   "id": "test-mc-008",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "A",
+   "response": "A",
+   "strict": true,
+   "lenient": true,
+   "extracted": "A"
+  },
+  {
+   "id": "test-mc-010",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "A",
+   "response": "A",
+   "strict": true,
+   "lenient": true,
+   "extracted": "A"
+  },
+  {
+   "id": "test-mc-011",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "B",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-030",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Oakland Athletics",
+   "response": "New York Mets",
+   "strict": false,
+   "lenient": false,
+   "extracted": "new york mets"
+  },
+  {
+   "id": "test-stats-022",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "5.81",
+   "response": "3.71",
+   "strict": false,
+   "lenient": false,
+   "extracted": "3.71"
+  },
+  {
+   "id": "test-mc-003",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "A",
+   "response": "A",
+   "strict": true,
+   "lenient": true,
+   "extracted": "A"
+  },
+  {
+   "id": "test-stats-008",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "1.41",
+   "response": "1.18",
+   "strict": false,
+   "lenient": false,
+   "extracted": "1.18"
+  },
+  {
+   "id": "test-mc-023",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "B",
+   "response": "B",
+   "strict": true,
+   "lenient": true,
+   "extracted": "B"
+  },
+  {
+   "id": "test-mc-032",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-mc-022",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "A",
+   "response": "A",
+   "strict": true,
+   "lenient": true,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-017",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Barry Bonds",
+   "response": "Mike Piazza",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike piazza"
+  },
+  {
+   "id": "test-short-018",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Jimmy Rollins",
+   "response": "Mike Trout",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike trout"
+  },
+  {
+   "id": "test-stats-006",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.264",
+   "response": "0.317",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.317"
+  },
+  {
+   "id": "test-mc-012",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "B",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-006",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Ted Williams",
+   "response": "Willie Mays",
+   "strict": false,
+   "lenient": false,
+   "extracted": "willie mays"
+  },
+  {
+   "id": "test-mc-007",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-stats-012",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "1.49",
+   "response": "1.18",
+   "strict": false,
+   "lenient": false,
+   "extracted": "1.18"
+  },
+  {
+   "id": "test-stats-034",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "4.61",
+   "response": "3.81",
+   "strict": false,
+   "lenient": false,
+   "extracted": "3.81"
+  },
+  {
+   "id": "test-short-004",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Roy Halladay",
+   "response": "Zack Wheeler",
+   "strict": false,
+   "lenient": false,
+   "extracted": "zack wheeler"
+  },
+  {
+   "id": "test-stats-005",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.403",
+   "response": "0.573",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.573"
+  },
+  {
+   "id": "test-stats-019",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.296",
+   "response": "0.311",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.311"
+  },
+  {
+   "id": "test-mc-002",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "C",
+   "response": "C",
+   "strict": true,
+   "lenient": true,
+   "extracted": "C"
+  },
+  {
+   "id": "test-stats-023",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.254",
+   "response": "0.318",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.318"
+  },
+  {
+   "id": "test-mc-029",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "B",
+   "response": "B)",
+   "strict": true,
+   "lenient": true,
+   "extracted": "B"
+  },
+  {
+   "id": "test-short-003",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Pedro Martinez",
+   "response": "Mike Piazza",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike piazza"
+  },
+  {
+   "id": "test-stats-003",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.320",
+   "response": "0.326",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.326"
+  },
+  {
+   "id": "test-mc-005",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "A",
+   "response": "A",
+   "strict": true,
+   "lenient": true,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-021",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Ozzie Guillen",
+   "response": "Mike Hamilton",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike hamilton"
+  },
+  {
+   "id": "test-mc-031",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "C",
+   "strict": false,
+   "lenient": false,
+   "extracted": "C"
+  },
+  {
+   "id": "test-short-025",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Chicago Cubs",
+   "response": "New York Giants",
+   "strict": false,
+   "lenient": false,
+   "extracted": "new york giants"
+  },
+  {
+   "id": "test-short-027",
+   "qtype": "short",
+   "source": "history",
+   "answer": "New York Yankees",
+   "response": "New York Yankees",
+   "strict": true,
+   "lenient": true,
+   "extracted": "new york yankees"
+  },
+  {
+   "id": "test-stats-017",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "4.33",
+   "response": "3.767",
+   "strict": false,
+   "lenient": false,
+   "extracted": "3.767"
+  },
+  {
+   "id": "test-mc-026",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-020",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Ron Kittle",
+   "response": "Mike Hamilton",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike hamilton"
+  },
+  {
+   "id": "test-mc-006",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-014",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Frank Thomas",
+   "response": "Mike Piazza",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike piazza"
+  },
+  {
+   "id": "test-short-007",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Jackie Robinson",
+   "response": "Joe DiMaggio",
+   "strict": false,
+   "lenient": false,
+   "extracted": "joe dimaggio"
+  }
+ ]
+}

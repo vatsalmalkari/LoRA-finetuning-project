@@ -1,0 +1,7 @@
+config,method,prompt,rank,targets,n_seeds,trainable_params_mean,trainable_params_std,trainable_pct_mean,trainable_pct_std,train_min_mean,train_min_std,tok_per_s_mean,tok_per_s_std,peak_mem_gb_mean,peak_mem_gb_std,checkpoint_mb_mean,checkpoint_mb_std,latency_ms_mean,latency_ms_std,latency_merged_ms_mean,latency_merged_ms_std,all_strict_mean,all_strict_std,all_lenient_mean,all_lenient_std,mc_strict_mean,mc_strict_std,mc_lenient_mean,mc_lenient_std,short_strict_mean,short_strict_std,short_lenient_mean,short_lenient_std,stats_strict_mean,stats_strict_std,stats_lenient_mean,stats_lenient_std
+full_lr1e-05__val,full,zero_shot,-,-,1,999885952.0,,100.0,,1.72276,,492.63995,,17.43626,,1907.1311,,,,,,0.06667,,0.06667,,0.2,,0.2,,0.0,,0.0,,0.0,,0.0,
+full_lr2e-05__val,full,zero_shot,-,-,1,999885952.0,,100.0,,1.731,,490.29339,,17.43626,,1907.1311,,,,,,0.1,,0.1,,0.3,,0.3,,0.0,,0.0,,0.0,,0.0,
+full_lr5e-05__val,full,zero_shot,-,-,1,999885952.0,,100.0,,1.73347,,489.59528,,17.43626,,1907.1311,,,,,,0.1,,0.1,,0.3,,0.3,,0.0,,0.0,,0.0,,0.0,
+lora_r8_q-v_lr0.0001__val,lora,zero_shot,8,q_proj+v_proj,1,745472.0,,0.07456,,1.39582,,608.02861,,3.24984,,1.42188,,,,,,0.1,,0.1,,0.3,,0.3,,0.0,,0.0,,0.0,,0.0,
+lora_r8_q-v_lr0.0002__val,lora,zero_shot,8,q_proj+v_proj,1,745472.0,,0.07456,,1.3872,,611.80644,,3.24984,,1.42188,,,,,,0.16667,,0.16667,,0.5,,0.5,,0.0,,0.0,,0.0,,0.0,
+lora_r8_q-v_lr0.0005__val,lora,zero_shot,8,q_proj+v_proj,1,745472.0,,0.07456,,1.3962,,607.86566,,3.24984,,1.42188,,,,,,0.06667,,0.06667,,0.2,,0.2,,0.0,,0.0,,0.0,,0.0,

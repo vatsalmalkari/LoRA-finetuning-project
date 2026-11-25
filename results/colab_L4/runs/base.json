@@ -1,0 +1,81 @@
+{
+ "name": "base",
+ "config": {
+  "method": "base",
+  "seed": 1,
+  "rank": 8,
+  "alpha": 16,
+  "dropout": 0.05,
+  "targets": [
+   "q_proj",
+   "v_proj"
+  ],
+  "lr": 0.0002,
+  "epochs": 3,
+  "batch_size": 8,
+  "micro_batch": 4,
+  "max_len": 512,
+  "warmup_ratio": 0.03,
+  "weight_decay": 0.0,
+  "precision": "bf16",
+  "grad_checkpointing": true,
+  "n_train": null,
+  "n_shot": 3,
+  "tag": ""
+ },
+ "gpu": "NVIDIA L4",
+ "eval_split": "test",
+ "model_load_mem_gb": 1.9275331497192383,
+ "trainable_params": 0,
+ "total_params": 999885952,
+ "accuracy": {
+  "all": {
+   "n": 100,
+   "strict": 0.14,
+   "lenient": 0.15
+  },
+  "mc": {
+   "n": 33,
+   "strict": 0.3939393939393939,
+   "lenient": 0.3939393939393939
+  },
+  "short": {
+   "n": 33,
+   "strict": 0.030303030303030304,
+   "lenient": 0.030303030303030304
+  },
+  "stats": {
+   "n": 34,
+   "strict": 0.0,
+   "lenient": 0.029411764705882353
+  }
+ },
+ "accuracy_fewshot": {
+  "all": {
+   "n": 100,
+   "strict": 0.17,
+   "lenient": 0.17
+  },
+  "mc": {
+   "n": 33,
+   "strict": 0.48484848484848486,
+   "lenient": 0.48484848484848486
+  },
+  "short": {
+   "n": 33,
+   "strict": 0.030303030303030304,
+   "lenient": 0.030303030303030304
+  },
+  "stats": {
+   "n": 34,
+   "strict": 0.0,
+   "lenient": 0.0
+  }
+ },
+ "latency": {
+  "latency_ms_mean": 3833.5972527500076,
+  "latency_ms_sd": 32.45744757615367,
+  "n_prompts": 20
+ },
+ "peak_mem_gb": 2.267958164215088
+}

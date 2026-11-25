@@ -1,0 +1,304 @@
+{
+ "zero_shot": [
+  {
+   "id": "val-short-003",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Denny McLain",
+   "response": "Vida Blue",
+   "strict": false,
+   "lenient": false,
+   "extracted": "vida blue"
+  },
+  {
+   "id": "val-stats-008",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.375",
+   "response": "0.414",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.414"
+  },
+  {
+   "id": "val-mc-008",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "A",
+   "response": "A",
+   "strict": true,
+   "lenient": true,
+   "extracted": "A"
+  },
+  {
+   "id": "val-short-001",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Steve Bedrosian",
+   "response": "Mike Schmidt",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike schmidt"
+  },
+  {
+   "id": "val-stats-006",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "1.27",
+   "response": "1.18",
+   "strict": false,
+   "lenient": false,
+   "extracted": "1.18"
+  },
+  {
+   "id": "val-short-004",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Jeff Burroughs",
+   "response": "Vida Blue",
+   "strict": false,
+   "lenient": false,
+   "extracted": "vida blue"
+  },
+  {
+   "id": "val-mc-010",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "A",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "val-short-006",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Christian Yelich",
+   "response": "Bryce Harper",
+   "strict": false,
+   "lenient": false,
+   "extracted": "bryce harper"
+  },
+  {
+   "id": "val-short-005",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Ryan Howard",
+   "response": "Mike Trout",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike trout"
+  },
+  {
+   "id": "val-short-010",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Texas Rangers",
+   "response": "Houston Astros",
+   "strict": false,
+   "lenient": false,
+   "extracted": "houston astros"
+  },
+  {
+   "id": "val-stats-002",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.245",
+   "response": "0.251",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.251"
+  },
+  {
+   "id": "val-mc-004",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "B",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "val-stats-001",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "2.80",
+   "response": "1.15",
+   "strict": false,
+   "lenient": false,
+   "extracted": "1.15"
+  },
+  {
+   "id": "val-mc-003",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "B",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "val-mc-002",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "D",
+   "strict": true,
+   "lenient": true,
+   "extracted": "D"
+  },
+  {
+   "id": "val-mc-005",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "A",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "val-stats-007",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "4.32",
+   "response": "1.15",
+   "strict": false,
+   "lenient": false,
+   "extracted": "1.15"
+  },
+  {
+   "id": "val-mc-001",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "D",
+   "strict": true,
+   "lenient": true,
+   "extracted": "D"
+  },
+  {
+   "id": "val-mc-009",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "val-mc-007",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "val-stats-010",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.249",
+   "response": "0.285",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.285"
+  },
+  {
+   "id": "val-short-008",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Fernando Valenzuela",
+   "response": "Mike Schmidt",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike schmidt"
+  },
+  {
+   "id": "val-stats-004",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "6.25",
+   "response": "4.15",
+   "strict": false,
+   "lenient": false,
+   "extracted": "4.15"
+  },
+  {
+   "id": "val-mc-006",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "B",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "val-stats-009",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.386",
+   "response": "0.285",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.285"
+  },
+  {
+   "id": "val-stats-005",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.373",
+   "response": "0.285",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.285"
+  },
+  {
+   "id": "val-short-002",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Jim Konstanty",
+   "response": "Joe Morgan",
+   "strict": false,
+   "lenient": false,
+   "extracted": "joe morgan"
+  },
+  {
+   "id": "val-short-009",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Chicago White Sox",
+   "response": "Cincinnati Reds",
+   "strict": false,
+   "lenient": false,
+   "extracted": "cincinnati reds"
+  },
+  {
+   "id": "val-stats-003",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "6.46",
+   "response": "4.15",
+   "strict": false,
+   "lenient": false,
+   "extracted": "4.15"
+  },
+  {
+   "id": "val-short-007",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Jim Gilliam",
+   "response": "Joe Morgan",
+   "strict": false,
+   "lenient": false,
+   "extracted": "joe morgan"
+  }
+ ]
+}

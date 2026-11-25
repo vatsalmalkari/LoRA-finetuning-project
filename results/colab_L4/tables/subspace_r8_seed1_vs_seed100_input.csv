@@ -1,0 +1,3 @@
+module,side,r_a,r_b,d,phi_11,phi_11_all_layers,phi_11_random,phi_1_all,phi_1_all_all_layers,phi_1_all_random,phi_1_all_random_expected,A_norm_vs_init
+q_proj,input,8,8,1152,0.00053,0.00636,0.00027,0.00893,0.01542,0.00665,0.00694,1.01159
+v_proj,input,8,8,1152,0.03328,0.04267,0.00036,0.04303,0.05159,0.01089,0.00694,1.0215

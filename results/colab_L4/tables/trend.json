@@ -1,0 +1,20 @@
+{
+  "slope_per_10x_params": -0.020087559458356986,
+  "ci_low": -0.038971351123640544,
+  "ci_high": -0.0017188491242579667,
+  "p": 0.029,
+  "n_configs": 11,
+  "configs": [
+    "lora_r1_q-v_lr0.0002",
+    "lora_r2_q-v_lr0.0002",
+    "lora_r8_v_lr0.0002",
+    "lora_r4_q-v_lr0.0002",
+    "lora_r2_q-k-v-o_lr0.0002",
+    "lora_r8_q_lr0.0002",
+    "lora_r8_q-v_lr0.0002",
+    "qlora_r8_q-v_lr0.0002",
+    "lora_r64_q-v_lr0.0002",
+    "top2_lr0.0001",
+    "full_lr2e-05"
+  ]
+}

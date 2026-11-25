@@ -1,0 +1,1004 @@
+{
+ "zero_shot": [
+  {
+   "id": "test-short-002",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Bret Saberhagen",
+   "response": "Bret Saberhagen",
+   "strict": true,
+   "lenient": true,
+   "extracted": "bret saberhagen"
+  },
+  {
+   "id": "test-stats-025",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.220",
+   "response": "0.247",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.247"
+  },
+  {
+   "id": "test-mc-030",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "D",
+   "response": "D",
+   "strict": true,
+   "lenient": true,
+   "extracted": "D"
+  },
+  {
+   "id": "test-mc-019",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "A",
+   "response": "A",
+   "strict": true,
+   "lenient": true,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-026",
+   "qtype": "short",
+   "source": "history",
+   "answer": "St. Louis Cardinals",
+   "response": "Cincinnati Reds",
+   "strict": false,
+   "lenient": false,
+   "extracted": "cincinnati reds"
+  },
+  {
+   "id": "test-stats-020",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "3.34",
+   "response": "3.05",
+   "strict": false,
+   "lenient": false,
+   "extracted": "3.05"
+  },
+  {
+   "id": "test-mc-021",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "D",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-stats-010",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.525",
+   "response": "0.447",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.447"
+  },
+  {
+   "id": "test-short-028",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Los Angeles Dodgers",
+   "response": "Cincinnati Reds",
+   "strict": false,
+   "lenient": false,
+   "extracted": "cincinnati reds"
+  },
+  {
+   "id": "test-short-009",
+   "qtype": "short",
+   "source": "history",
+   "answer": "George Foster",
+   "response": "Joe Morgan",
+   "strict": false,
+   "lenient": false,
+   "extracted": "joe morgan"
+  },
+  {
+   "id": "test-short-005",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Jake Daubert",
+   "response": "Joe Morgan",
+   "strict": false,
+   "lenient": false,
+   "extracted": "joe morgan"
+  },
+  {
+   "id": "test-mc-009",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "B",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-022",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Eric Karros",
+   "response": "Mike Schmidt",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike schmidt"
+  },
+  {
+   "id": "test-stats-029",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "2.49",
+   "response": "3.05",
+   "strict": false,
+   "lenient": false,
+   "extracted": "3.05"
+  },
+  {
+   "id": "test-short-033",
+   "qtype": "short",
+   "source": "history",
+   "answer": "San Francisco Giants",
+   "response": "Boston Red Sox",
+   "strict": false,
+   "lenient": false,
+   "extracted": "boston red sox"
+  },
+  {
+   "id": "test-stats-015",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "1.52",
+   "response": "1.15",
+   "strict": false,
+   "lenient": false,
+   "extracted": "1.15"
+  },
+  {
+   "id": "test-stats-033",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.408",
+   "response": "0.347",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.347"
+  },
+  {
+   "id": "test-short-011",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Andre Dawson",
+   "response": "Bret Saberhagen",
+   "strict": false,
+   "lenient": false,
+   "extracted": "bret saberhagen"
+  },
+  {
+   "id": "test-mc-018",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-stats-018",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.314",
+   "response": "0.307",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.307"
+  },
+  {
+   "id": "test-mc-017",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "B",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "test-short-015",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Chipper Jones",
+   "response": "Roger Clemens",
+   "strict": false,
+   "lenient": false,
+   "extracted": "roger clemens"
+  },
+  {
+   "id": "test-stats-014",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "5.71",
+   "response": "5.05",
+   "strict": false,
+   "lenient": false,
+   "extracted": "5.05"
+  },
+  {
+   "id": "test-stats-013",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "4.40",
+   "response": "5.03",
+   "strict": false,
+   "lenient": false,
+   "extracted": "5.03"
+  },
+  {
+   "id": "test-stats-007",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.239",
+   "response": "0.247",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.247"
+  },
+  {
+   "id": "test-short-032",
+   "qtype": "short",
+   "source": "history",
+   "answer": "St. Louis Cardinals",
+   "response": "Boston Red Sox",
+   "strict": false,
+   "lenient": false,
+   "extracted": "boston red sox"
+  },
+  {
+   "id": "test-mc-024",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-023",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Kyle Lewis",
+   "response": "Cody Bellinger",
+   "strict": false,
+   "lenient": false,
+   "extracted": "cody bellinger"
+  },
+  {
+   "id": "test-mc-020",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-012",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Barry Bonds",
+   "response": "Bret Saberhagen",
+   "strict": false,
+   "lenient": false,
+   "extracted": "bret saberhagen"
+  },
+  {
+   "id": "test-stats-004",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.348",
+   "response": "0.357",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.357"
+  },
+  {
+   "id": "test-mc-033",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "D",
+   "strict": true,
+   "lenient": true,
+   "extracted": "D"
+  },
+  {
+   "id": "test-stats-026",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "7.37",
+   "response": "5.05",
+   "strict": false,
+   "lenient": false,
+   "extracted": "5.05"
+  },
+  {
+   "id": "test-mc-016",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "test-stats-021",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.330",
+   "response": "0.247",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.247"
+  },
+  {
+   "id": "test-stats-031",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "1.35",
+   "response": "1.15",
+   "strict": false,
+   "lenient": false,
+   "extracted": "1.15"
+  },
+  {
+   "id": "test-stats-011",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.365",
+   "response": "0.337",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.337"
+  },
+  {
+   "id": "test-mc-013",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "B",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "test-stats-027",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "4.17",
+   "response": "5.05",
+   "strict": false,
+   "lenient": false,
+   "extracted": "5.05"
+  },
+  {
+   "id": "test-mc-004",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "D",
+   "strict": true,
+   "lenient": true,
+   "extracted": "D"
+  },
+  {
+   "id": "test-stats-009",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "4.57",
+   "response": "3.05",
+   "strict": false,
+   "lenient": false,
+   "extracted": "3.05"
+  },
+  {
+   "id": "test-short-031",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Florida Marlins",
+   "response": "Atlanta Braves",
+   "strict": false,
+   "lenient": false,
+   "extracted": "atlanta braves"
+  },
+  {
+   "id": "test-short-008",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Yogi Berra",
+   "response": "Bill Virdon",
+   "strict": false,
+   "lenient": false,
+   "extracted": "bill virdon"
+  },
+  {
+   "id": "test-stats-002",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "1.53",
+   "response": "1.11",
+   "strict": false,
+   "lenient": false,
+   "extracted": "1.11"
+  },
+  {
+   "id": "test-stats-001",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "4.46",
+   "response": "5.05",
+   "strict": false,
+   "lenient": false,
+   "extracted": "5.05"
+  },
+  {
+   "id": "test-short-019",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Ryan Braun",
+   "response": "Mike Trout",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike trout"
+  },
+  {
+   "id": "test-mc-014",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "C",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "test-mc-027",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-001",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Tom Seaver",
+   "response": "Joe Morgan",
+   "strict": false,
+   "lenient": false,
+   "extracted": "joe morgan"
+  },
+  {
+   "id": "test-short-010",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Mike Schmidt",
+   "response": "Bret Saberhagen",
+   "strict": false,
+   "lenient": false,
+   "extracted": "bret saberhagen"
+  },
+  {
+   "id": "test-stats-030",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "3.87",
+   "response": "3.05",
+   "strict": false,
+   "lenient": false,
+   "extracted": "3.05"
+  },
+  {
+   "id": "test-stats-028",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.623",
+   "response": "0.457",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.457"
+  },
+  {
+   "id": "test-short-024",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Chicago White Sox",
+   "response": "Cincinnati Reds",
+   "strict": false,
+   "lenient": false,
+   "extracted": "cincinnati reds"
+  },
+  {
+   "id": "test-mc-025",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "A",
+   "response": "A",
+   "strict": true,
+   "lenient": true,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-016",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Jeff Kent",
+   "response": "Albert Pujols",
+   "strict": false,
+   "lenient": false,
+   "extracted": "albert pujols"
+  },
+  {
+   "id": "test-stats-032",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.190",
+   "response": "0.247",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.247"
+  },
+  {
+   "id": "test-stats-024",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.349",
+   "response": "0.347",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.347"
+  },
+  {
+   "id": "test-stats-016",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.282",
+   "response": "0.357",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.357"
+  },
+  {
+   "id": "test-mc-001",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "B",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "test-short-029",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Detroit Tigers",
+   "response": "Cincinnati Reds",
+   "strict": false,
+   "lenient": false,
+   "extracted": "cincinnati reds"
+  },
+  {
+   "id": "test-mc-028",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "A",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "test-short-013",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Barry Bonds",
+   "response": "Bret Saberhagen",
+   "strict": false,
+   "lenient": false,
+   "extracted": "bret saberhagen"
+  },
+  {
+   "id": "test-mc-015",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "A",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "test-mc-008",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "A",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "test-mc-010",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "A",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "test-mc-011",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "B",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "test-short-030",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Oakland Athletics",
+   "response": "Philadelphia Phillies",
+   "strict": false,
+   "lenient": false,
+   "extracted": "philadelphia phillies"
+  },
+  {
+   "id": "test-stats-022",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "5.81",
+   "response": "3.05",
+   "strict": false,
+   "lenient": false,
+   "extracted": "3.05"
+  },
+  {
+   "id": "test-mc-003",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "A",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "test-stats-008",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "1.41",
+   "response": "1.11",
+   "strict": false,
+   "lenient": false,
+   "extracted": "1.11"
+  },
+  {
+   "id": "test-mc-023",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "B",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "test-mc-032",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "D",
+   "strict": true,
+   "lenient": true,
+   "extracted": "D"
+  },
+  {
+   "id": "test-mc-022",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "A",
+   "response": "A",
+   "strict": true,
+   "lenient": true,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-017",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Barry Bonds",
+   "response": "Albert Pujols",
+   "strict": false,
+   "lenient": false,
+   "extracted": "albert pujols"
+  },
+  {
+   "id": "test-short-018",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Jimmy Rollins",
+   "response": "Albert Pujols",
+   "strict": false,
+   "lenient": false,
+   "extracted": "albert pujols"
+  },
+  {
+   "id": "test-stats-006",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.264",
+   "response": "0.247",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.247"
+  },
+  {
+   "id": "test-mc-012",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "B",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "test-short-006",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Ted Williams",
+   "response": "Roy Sievers",
+   "strict": false,
+   "lenient": false,
+   "extracted": "roy sievers"
+  },
+  {
+   "id": "test-mc-007",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "D",
+   "strict": true,
+   "lenient": true,
+   "extracted": "D"
+  },
+  {
+   "id": "test-stats-012",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "1.49",
+   "response": "1.15",
+   "strict": false,
+   "lenient": false,
+   "extracted": "1.15"
+  },
+  {
+   "id": "test-stats-034",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "4.61",
+   "response": "5.03",
+   "strict": false,
+   "lenient": false,
+   "extracted": "5.03"
+  },
+  {
+   "id": "test-short-004",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Roy Halladay",
+   "response": "Cliff Lee",
+   "strict": false,
+   "lenient": false,
+   "extracted": "cliff lee"
+  },
+  {
+   "id": "test-stats-005",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.403",
+   "response": "0.457",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.457"
+  },
+  {
+   "id": "test-stats-019",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.296",
+   "response": "0.347",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.347"
+  },
+  {
+   "id": "test-mc-002",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "C",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-stats-023",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.254",
+   "response": "0.247",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.247"
+  },
+  {
+   "id": "test-mc-029",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "B",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "test-short-003",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Pedro Martinez",
+   "response": "Roger Clemens",
+   "strict": false,
+   "lenient": false,
+   "extracted": "roger clemens"
+  },
+  {
+   "id": "test-stats-003",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "0.320",
+   "response": "0.307",
+   "strict": false,
+   "lenient": false,
+   "extracted": "0.307"
+  },
+  {
+   "id": "test-mc-005",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "A",
+   "response": "D",
+   "strict": false,
+   "lenient": false,
+   "extracted": "D"
+  },
+  {
+   "id": "test-short-021",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Ozzie Guillen",
+   "response": "Mike Schmidt",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike schmidt"
+  },
+  {
+   "id": "test-mc-031",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "D",
+   "strict": true,
+   "lenient": true,
+   "extracted": "D"
+  },
+  {
+   "id": "test-short-025",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Chicago Cubs",
+   "response": "Cincinnati Reds",
+   "strict": false,
+   "lenient": false,
+   "extracted": "cincinnati reds"
+  },
+  {
+   "id": "test-short-027",
+   "qtype": "short",
+   "source": "history",
+   "answer": "New York Yankees",
+   "response": "Cincinnati Reds",
+   "strict": false,
+   "lenient": false,
+   "extracted": "cincinnati reds"
+  },
+  {
+   "id": "test-stats-017",
+   "qtype": "stats",
+   "source": "lahman_calc",
+   "answer": "4.33",
+   "response": "3.05",
+   "strict": false,
+   "lenient": false,
+   "extracted": "3.05"
+  },
+  {
+   "id": "test-mc-026",
+   "qtype": "mc",
+   "source": "rules",
+   "answer": "C",
+   "response": "A",
+   "strict": false,
+   "lenient": false,
+   "extracted": "A"
+  },
+  {
+   "id": "test-short-020",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Ron Kittle",
+   "response": "Mike Schmidt",
+   "strict": false,
+   "lenient": false,
+   "extracted": "mike schmidt"
+  },
+  {
+   "id": "test-mc-006",
+   "qtype": "mc",
+   "source": "history",
+   "answer": "D",
+   "response": "D",
+   "strict": true,
+   "lenient": true,
+   "extracted": "D"
+  },
+  {
+   "id": "test-short-014",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Frank Thomas",
+   "response": "Roger Clemens",
+   "strict": false,
+   "lenient": false,
+   "extracted": "roger clemens"
+  },
+  {
+   "id": "test-short-007",
+   "qtype": "short",
+   "source": "history",
+   "answer": "Jackie Robinson",
+   "response": "Roy Sievers",
+   "strict": false,
+   "lenient": false,
+   "extracted": "roy sievers"
+  }
+ ]
+}
