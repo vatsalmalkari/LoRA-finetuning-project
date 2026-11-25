@@ -188,7 +188,7 @@ def test_subspace_similarity_from_adapter_files(tmp_path):
             for mod, d in [("q_proj", 64), ("v_proj", 64)]:
                 pre = f"base_model.model.model.layers.{layer}.self_attn.{mod}"
                 t[f"{pre}.lora_A.weight"] = rng.standard_normal((r, d)).astype(np.float32)
-                t[f"{pre}.lora_B.weight"] = np.zeros((32, r), np.float32)
+                t[f"{pre}.lora_B.weight"] = rng.standard_normal((48, r)).astype(np.float32)
         path.mkdir()
         save_file(t, str(path / "adapter_model.safetensors"))
 
@@ -200,6 +200,38 @@ def test_subspace_similarity_from_adapter_files(tmp_path):
     assert sim["layer"] == 2 and sim["phi"]["q_proj"].shape == (8, 32)
     assert {"q_proj", "v_proj", "random_q_proj", "random_v_proj"} == set(sim["phi"])
     assert list(sim["summary"]["module"]) == ["q_proj", "v_proj"]
+    # Random A: ||A||_F^2 = r * d, vs r/3 at Kaiming init -> ratio sqrt(3 * 64) ~ 13.9
+    assert sim["summary"]["A_norm_vs_init"].iloc[0] == pytest.approx(np.sqrt(3 * 64), rel=0.1)
+    out = an.subspace_similarity(tmp_path / "r8", tmp_path / "r64", side="output")
+    assert out["side"] == "output" and out["phi"]["q_proj"].shape == (8, 32)
+    assert out["summary"]["d"].iloc[0] == 48                       # d_out
+    assert out["summary"]["phi_1_all_random_expected"].iloc[0] == pytest.approx(32 / 48)
+    with pytest.raises(ValueError):
+        an.subspace_similarity(tmp_path / "r8", tmp_path / "r64", side="sideways")
+
+
+def test_output_basis_is_left_singular_vectors_of_BA():
+    rng = np.random.default_rng(0)
+    A, B = rng.standard_normal((8, 300)), rng.standard_normal((120, 8))
+    U = an.basis(A, B, side="output")
+    U_ref = np.linalg.svd(B @ A, full_matrices=False)[0][:, :8].T
+    assert U.shape == (8, 120)
+    assert np.allclose(U @ U.T, np.eye(8))
+    assert np.allclose(np.abs(U @ U_ref.T), np.eye(8), atol=1e-8)     # same vectors up to sign
+
+
+def test_output_side_ignores_A_and_sees_shared_B_directions():
+    """Two adapters with unrelated random A but B sharing directions: input side looks random,
+    output side finds the overlap. This is the situation after a short LoRA run."""
+    rng = np.random.default_rng(1)
+    d_in, d_out = 1000, 400
+    shared = rng.standard_normal((d_out, 2))
+    B8 = np.hstack([shared * [5, 3], 0.1 * rng.standard_normal((d_out, 6))])
+    B64 = np.hstack([shared * [4, 2], 0.1 * rng.standard_normal((d_out, 62))])
+    A8, A64 = rng.standard_normal((8, d_in)), rng.standard_normal((64, d_in))
+    P_in = an.phi_from_bases(an.basis(A8), an.basis(A64))
+    P_out = an.phi_from_bases(an.basis(A8, B8, "output"), an.basis(A64, B64, "output"))
+    assert P_in[0, -1] < 0.2 and P_out[0, -1] > 0.95
 
 
 # ------------------------------------------------------------------ figures
@@ -213,6 +245,34 @@ def test_plot_accuracy_vs_params(res, tmp_path):
     assert {"r=1", "r=64", "Full FT", "Last 2 layers", "QLoRA r=8"} <= texts
     legend = [t.get_text() for t in fig.axes[0].get_legend().get_texts()]
     assert any(t.startswith("Base model, few-shot") for t in legend)
+
+
+def test_plot_labels_are_unambiguous(res, tmp_path):
+    """Each label without a leader line is nearer its own point than any other point,
+    and no two labels overlap."""
+    pytest.importorskip("matplotlib")
+    import matplotlib
+    matplotlib.use("Agg")
+    fig = res.plot_accuracy_vs_params(B=200)
+    ax = fig.axes[0]
+    fig.canvas.draw()
+    rend = fig.canvas.get_renderer()
+    labels = [t for t in ax.texts if hasattr(t, "xy")]
+    pts = [np.asarray(ax.transData.transform(t.xy)) for t in labels]
+    from matplotlib.text import Text
+    boxes = [Text.get_window_extent(t, rend).extents for t in labels]     # text only
+    assert len(labels) == 11
+
+    def rect_dist(bb, p):
+        return np.hypot(max(bb[0] - p[0], 0, p[0] - bb[2]), max(bb[1] - p[1], 0, p[1] - bb[3]))
+
+    for k, (t, bb) in enumerate(zip(labels, boxes)):
+        if t.arrow_patch is None:
+            own = rect_dist(bb, pts[k])
+            others = [rect_dist(bb, p) for j, p in enumerate(pts) if not np.allclose(p, pts[k])]
+            assert own < min(others), t.get_text()
+        for bb2 in boxes[k + 1:]:
+            assert bb[2] <= bb2[0] or bb2[2] <= bb[0] or bb[3] <= bb2[1] or bb2[3] <= bb[1]
 
 
 def test_plot_subspace(tmp_path):

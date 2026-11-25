@@ -287,6 +287,82 @@ class Results:
         return pd.DataFrame(rows).T
 
     # ------------------------------------------------------------ figure
+    def _place_labels(self, fig, ax, legend, pts: dict[str, tuple[float, float]]):
+        """Direct labels that can only be read one way.
+
+        A label next to its point must be nearer that point than any other point. If no such
+        spot is free, the label moves further out with a thin leader line that passes no other
+        marker. Nothing may overlap a marker, the legend or another label.
+        """
+        from matplotlib import patheffects
+        from matplotlib.text import Text
+
+        fig.canvas.draw()
+        rend = fig.canvas.get_renderer()
+        s = fig.dpi / 72                                     # points -> pixels
+        disp = {n: np.asarray(ax.transData.transform(p)) for n, p in pts.items()}
+        mark = 5.5 * s                                       # marker radius incl. ring
+        blocked = [(x - mark, y - mark, x + mark, y + mark) for x, y in disp.values()]
+        blocked.append(tuple(legend.get_window_extent(rend).extents))
+        ab = ax.get_window_extent(rend).extents
+        halo = [patheffects.withStroke(linewidth=3, foreground=SURFACE)]
+
+        def overlaps(a, b):
+            return not (a[2] <= b[0] or b[2] <= a[0] or a[3] <= b[1] or b[3] <= a[1])
+
+        def text_box(t):
+            # The label's own box. Annotation.get_window_extent would include the leader line.
+            t.update_positions(rend)
+            return Text.get_window_extent(t, rend).extents
+
+        def rect_dist(bb, p):
+            dx = max(bb[0] - p[0], 0, p[0] - bb[2])
+            dy = max(bb[1] - p[1], 0, p[1] - bb[3])
+            return math.hypot(dx, dy)
+
+        def seg_dist(p, a, b):
+            ab_, ap = b - a, p - a
+            t = np.clip(ap @ ab_ / max(ab_ @ ab_, 1e-9), 0, 1)
+            return float(np.linalg.norm(p - (a + t * ab_)))
+
+        cands = []
+        for dist in (7, 15, 24, 34, 46, 60):
+            angles = [0, 35, -35, 180, 145, -145, 90, -90] + ([60, -60, 120, -120] if dist > 7 else [])
+            for a in angles:
+                c, sn = math.cos(math.radians(a)), math.sin(math.radians(a))
+                ha = "left" if c > 0.3 else "right" if c < -0.3 else "center"
+                va = "bottom" if sn > 0.3 else "top" if sn < -0.3 else "center"
+                cands.append((dist * c, dist * sn, ha, va, dist > 7))
+
+        def put(n, dx, dy, ha, va, leader):
+            kw = {"arrowprops": {"arrowstyle": "-", "color": MUTED, "lw": 0.6, "shrinkA": 1,
+                                 "shrinkB": 5}} if leader else {}
+            return ax.annotate(self.meta.loc[n, "label"], pts[n], xytext=(dx, dy), textcoords="offset points",
+                               ha=ha, va=va, fontsize=7.5, color=INK_2, zorder=5, path_effects=halo, **kw)
+
+        # Crowded points choose first.
+        crowd = {n: sum(np.linalg.norm(disp[n] - disp[m]) < 60 * s for m in disp) for n in disp}
+        for n in sorted(disp, key=lambda n: (-crowd[n], -pts[n][1])):
+            others = [disp[m] for m in disp if m != n]
+            for dx, dy, ha, va, leader in cands:
+                t = put(n, dx, dy, ha, va, leader)
+                bb = text_box(t)
+                ok = (bb[0] >= ab[0] and bb[2] <= ab[2] and bb[1] >= ab[1] and bb[3] <= ab[3]
+                      and not any(overlaps(bb, o) for o in blocked))
+                if ok and not leader:
+                    own = rect_dist(bb, disp[n])
+                    ok = all(rect_dist(bb, o) > own + 2 * s for o in others)
+                if ok and leader:
+                    near = np.array([min(max(disp[n][0], bb[0]), bb[2]), min(max(disp[n][1], bb[1]), bb[3])])
+                    ok = all(seg_dist(o, disp[n], near) > mark + s for o in others)
+                if ok:
+                    break
+                t.remove()
+            else:                       # nowhere free: fall back to the first spot
+                t = put(n, *cands[0])
+                bb = text_box(t)
+            blocked.append((bb[0] - 1.5 * s, bb[1] - 1.5 * s, bb[2] + 1.5 * s, bb[3] + 1.5 * s))
+
     def plot_accuracy_vs_params(self, path: str | Path | None = None, B: int = 4000):
         """Accuracy vs trainable parameters (log x), 95% item-bootstrap CIs.
 
@@ -294,7 +370,6 @@ class Results:
         nudged sideways by a few percent so their error bars don't overlap.
         """
         import matplotlib.pyplot as plt
-        from matplotlib import patheffects
         from matplotlib.lines import Line2D
         from matplotlib.ticker import FixedLocator, NullLocator
 
@@ -369,41 +444,7 @@ class Results:
             t.set_color(INK_2)
         fig.tight_layout()
 
-        # Direct labels, placed greedily where they overlap no marker, legend or earlier label.
-        fig.canvas.draw()
-        rend = fig.canvas.get_renderer()
-        blocked = []
-        for n in trained:
-            px, py = ax.transData.transform((xpos[n], acc[n]))
-            blocked.append((px - 6, py - 6, px + 6, py + 6))
-        blocked.append(tuple(leg.get_window_extent(rend).extents))
-        ab = ax.get_window_extent(rend).extents
-        halo = [patheffects.withStroke(linewidth=3, foreground=SURFACE)]
-        cands = [(7, 6, "left"), (7, -7, "left"), (-7, 6, "right"), (-7, -7, "right"),
-                 (0, 11, "center"), (0, -13, "center"), (8, 16, "left"), (8, -17, "left"),
-                 (-8, 16, "right"), (-8, -17, "right"), (0, 22, "center"), (0, -24, "center")]
-
-        def overlaps(a, b):
-            return not (a[2] <= b[0] or b[2] <= a[0] or a[3] <= b[1] or b[3] <= a[1])
-
-        def put(n, dx, dy, ha):
-            return ax.annotate(self.meta.loc[n, "label"], (xpos[n], acc[n]), xytext=(dx, dy),
-                               textcoords="offset points", ha=ha, va="center", fontsize=7.5,
-                               color=INK_2, zorder=5, path_effects=halo)
-
-        pad = 1.5 * fig.dpi / 72
-        for n in sorted(trained, key=lambda n: -acc[n]):
-            for dx, dy, ha in cands:
-                t = put(n, dx, dy, ha)
-                bb = t.get_window_extent(rend).extents
-                inside = bb[0] >= ab[0] and bb[2] <= ab[2] and bb[1] >= ab[1] and bb[3] <= ab[3]
-                if inside and not any(overlaps(bb, o) for o in blocked):
-                    break
-                t.remove()
-            else:                       # nowhere free: fall back to the first spot
-                t = put(n, *cands[0])
-                bb = t.get_window_extent(rend).extents
-            blocked.append((bb[0] - pad, bb[1] - pad, bb[2] + pad, bb[3] + pad))
+        self._place_labels(fig, ax, leg, {n: (xpos[n], acc[n]) for n in trained})
         if path:
             Path(path).parent.mkdir(parents=True, exist_ok=True)
             fig.savefig(path, facecolor=SURFACE, bbox_inches="tight")
@@ -411,11 +452,13 @@ class Results:
 
 
 # ====================================================================== subspace similarity (paper 7.2)
-_KEY = re.compile(r"layers\.(\d+)\.self_attn\.(\w+_proj)\.lora_A(?:\.default)?\.weight$")
+_KEY = re.compile(r"layers\.(\d+)\.self_attn\.(\w+_proj)\.lora_([AB])(?:\.default)?\.weight$")
+SIDES = {"input": "input side: row space of A (as in the paper)",
+         "output": "output side: column space of ΔW = BA (learned from B = 0)"}
 
 
-def load_lora_A(adapter_dir: str | Path) -> dict[tuple[int, str], np.ndarray]:
-    """{(layer, module): A} with A of shape (r, d_in), from a saved PEFT adapter."""
+def load_lora(adapter_dir: str | Path) -> dict[tuple[int, str], dict[str, np.ndarray]]:
+    """{(layer, module): {"A": (r, d_in), "B": (d_out, r)}} from a saved PEFT adapter."""
     path = Path(adapter_dir) / "adapter_model.safetensors"
     try:
         from safetensors.torch import load_file
@@ -423,23 +466,40 @@ def load_lora_A(adapter_dir: str | Path) -> dict[tuple[int, str], np.ndarray]:
     except ImportError:
         from safetensors.numpy import load_file
         tensors = load_file(str(path))
-    out = {}
+    out: dict = {}
     for k, v in tensors.items():
         m = _KEY.search(k)
         if m:
-            out[(int(m.group(1)), m.group(2))] = np.asarray(v, dtype=np.float64)
+            out.setdefault((int(m.group(1)), m.group(2)), {})[m.group(3)] = np.asarray(v, dtype=np.float64)
     if not out:
-        raise ValueError(f"no lora_A weights found in {path}")
+        raise ValueError(f"no LoRA weights found in {path}")
     return out
 
 
-def phi(A1: np.ndarray, A2: np.ndarray) -> np.ndarray:
-    """Paper eq. (4): phi(i, j) = ||U1_i^T U2_j||_F^2 / min(i, j), U = right-singular vectors of A.
+def load_lora_A(adapter_dir: str | Path) -> dict[tuple[int, str], np.ndarray]:
+    """{(layer, module): A} with A of shape (r, d_in)."""
+    return {k: v["A"] for k, v in load_lora(adapter_dir).items() if "A" in v}
 
-    Returns an (r1, r2) matrix; entry [i-1, j-1] is phi(i, j), in [0, 1].
+
+def basis(A: np.ndarray, B: np.ndarray | None = None, side: str = "input") -> np.ndarray:
+    """Orthonormal directions (rows), most important first.
+
+    input:  right-singular vectors of A (r x d_in). This is the paper's choice. A starts as a
+            random matrix, so after a short run it can still mostly reflect its initialisation.
+    output: left-singular vectors of ΔW = B A (d_out x d_in). B starts at zero, so these
+            directions were produced entirely by training. Computed without forming BA:
+            A^T = Q R  =>  BA = (B R^T) Q^T, and Q has orthonormal columns.
     """
-    U1 = np.linalg.svd(A1, full_matrices=False)[2]     # (r1, d): rows are right-singular vectors
-    U2 = np.linalg.svd(A2, full_matrices=False)[2]
+    if side == "input":
+        return np.linalg.svd(A, full_matrices=False)[2]
+    if side != "output":
+        raise ValueError(f"side must be 'input' or 'output', not {side!r}")
+    _, R = np.linalg.qr(A.T)
+    return np.linalg.svd(B @ R.T, full_matrices=False)[0].T
+
+
+def phi_from_bases(U1: np.ndarray, U2: np.ndarray) -> np.ndarray:
+    """Paper eq. (4) for orthonormal row bases: phi(i, j) = ||U1_i U2_j^T||_F^2 / min(i, j)."""
     M2 = (U1 @ U2.T) ** 2                              # (r1, r2)
     C = M2.cumsum(axis=0).cumsum(axis=1)
     i = np.arange(1, M2.shape[0] + 1)[:, None]
@@ -447,42 +507,61 @@ def phi(A1: np.ndarray, A2: np.ndarray) -> np.ndarray:
     return C / np.minimum(i, j)
 
 
-def subspace_similarity(adapter_a: str | Path, adapter_b: str | Path, layer: int | None = None,
-                        modules=("q_proj", "v_proj"), seed: int = 0) -> dict:
-    """phi between two adapters' A matrices, per module, plus a random-Gaussian baseline.
+def phi(A1: np.ndarray, A2: np.ndarray) -> np.ndarray:
+    """Paper eq. (4): phi(i, j) = ||U1_i^T U2_j||_F^2 / min(i, j), U = right-singular vectors of A.
 
-    `layer` defaults to the middle layer (the paper shows layer 48 of 96).
-
-    Summary columns (paper Section 7.2):
-      phi_11      phi(1, 1): do the two adapters' top directions coincide?
-      phi_1_all   phi(1, r_b): how much of A's top direction lies inside B's whole subspace?
-    each for the chosen layer, averaged over all layers, and for random Gaussian matrices.
-    For random subspaces E[phi(i, j)] = max(i, j) / d_in, so phi_11 ~ 1/d and phi_1_all ~ r_b/d.
+    Returns an (r1, r2) matrix; entry [i-1, j-1] is phi(i, j), in [0, 1].
     """
-    A, Bm = load_lora_A(adapter_a), load_lora_A(adapter_b)
-    layers = sorted({l for l, _ in A} & {l for l, _ in Bm})
+    return phi_from_bases(basis(A1), basis(A2))
+
+
+def subspace_similarity(adapter_a: str | Path, adapter_b: str | Path, layer: int | None = None,
+                        modules=("q_proj", "v_proj"), side: str = "input", seed: int = 0) -> dict:
+    """phi between two adapters, per module, plus a random-Gaussian baseline of the same shape.
+
+    `side` chooses which subspace is compared (see `basis`). `layer` defaults to the middle
+    layer (the paper shows layer 48 of 96).
+
+    Summary columns:
+      phi_11      phi(1, 1): do the two adapters' top directions coincide?
+      phi_1_all   phi(1, r_b): how much of the first adapter's top direction lies in the
+                  second adapter's whole subspace?
+    each for the chosen layer, averaged over all layers, and for random matrices. For random
+    subspaces E[phi(i, j)] = max(i, j) / d, so phi_11 ~ 1/d and phi_1_all ~ r_b/d.
+      A_norm_vs_init   ||A||_F / its expected value at PEFT's initialisation (Kaiming-uniform,
+                  E||A||_F^2 = r/3), first adapter, averaged over layers. Near 1 suggests A
+                  is still mostly its random initialisation.
+    """
+    if side not in SIDES:
+        raise ValueError(f"side must be one of {list(SIDES)}")
+    La, Lb = load_lora(adapter_a), load_lora(adapter_b)
+    layers = sorted({l for l, _ in La} & {l for l, _ in Lb})
     layer = layers[len(layers) // 2] if layer is None else layer
     rng = np.random.default_rng(seed)
     out = {"layer": layer, "n_layers": len(layers), "a": str(adapter_a), "b": str(adapter_b),
-           "phi": {}, "summary": []}
+           "side": side, "phi": {}, "summary": []}
     for mod in modules:
-        if (layer, mod) not in A:
+        if (layer, mod) not in La:
             continue
-        out["phi"][mod] = phi(A[(layer, mod)], Bm[(layer, mod)])
-        every = [phi(A[(l, mod)], Bm[(l, mod)]) for l in layers]
-        r1, d = A[(layer, mod)].shape
-        r2 = Bm[(layer, mod)].shape[0]
-        rand = phi(rng.standard_normal((r1, d)), rng.standard_normal((r2, d)))
+        bases = {l: (basis(La[(l, mod)]["A"], La[(l, mod)].get("B"), side),
+                     basis(Lb[(l, mod)]["A"], Lb[(l, mod)].get("B"), side)) for l in layers}
+        every = {l: phi_from_bases(*bases[l]) for l in layers}
+        P = every[layer]
+        out["phi"][mod] = P
+        r1, r2 = bases[layer][0].shape[0], bases[layer][1].shape[0]
+        d = bases[layer][0].shape[1]
+        rand = phi_from_bases(basis(rng.standard_normal((r1, d))), basis(rng.standard_normal((r2, d))))
         out["phi"][f"random_{mod}"] = rand
-        P = out["phi"][mod]
-        out["summary"].append({"module": mod, "r_a": r1, "r_b": r2, "d_in": d,
+        A_ratio = [np.linalg.norm(La[(l, mod)]["A"]) / math.sqrt(La[(l, mod)]["A"].shape[0] / 3) for l in layers]
+        out["summary"].append({"module": mod, "side": side, "r_a": r1, "r_b": r2, "d": d,
                                "phi_11": float(P[0, 0]),
-                               "phi_11_all_layers": float(np.mean([e[0, 0] for e in every])),
+                               "phi_11_all_layers": float(np.mean([e[0, 0] for e in every.values()])),
                                "phi_11_random": float(rand[0, 0]),
                                "phi_1_all": float(P[0, -1]),
-                               "phi_1_all_all_layers": float(np.mean([e[0, -1] for e in every])),
+                               "phi_1_all_all_layers": float(np.mean([e[0, -1] for e in every.values()])),
                                "phi_1_all_random": float(rand[0, -1]),
-                               "phi_1_all_random_expected": r2 / d})
+                               "phi_1_all_random_expected": r2 / d,
+                               "A_norm_vs_init": float(np.mean(A_ratio))})
     out["summary"] = pd.DataFrame(out["summary"])
     return out
 
@@ -494,9 +573,15 @@ def plot_subspace(sim: dict, path: str | Path | None = None, label_a: str = "r=8
 
     cmap = LinearSegmentedColormap.from_list("seq_blue", SEQ_BLUE)
     panels = [(m, f"ΔW{m[0]} ({m})") for m in sim["phi"] if not m.startswith("random_")]
-    rand_key = next((k for k in sim["phi"] if k.startswith("random_")), None)
-    if rand_key:
-        panels.append((rand_key, "Random Gaussian"))
+    # One random baseline per distinct dimension: on the output side q (d=1024) and v (d=256)
+    # differ, and random overlap is max(i, j)/d, so v needs its own reference.
+    dims = dict(zip(sim["summary"]["module"], sim["summary"]["d"])) if len(sim.get("summary", [])) else {}
+    seen_d = set()
+    for m, _ in list(panels):
+        d = dims.get(m)
+        if f"random_{m}" in sim["phi"] and d not in seen_d:
+            seen_d.add(d)
+            panels.append((f"random_{m}", "Random Gaussian" + (f", d={d}" if d else "")))
     fig, axes = plt.subplots(1, len(panels), figsize=(3.3 * len(panels), 2.9), dpi=200,
                              gridspec_kw={"wspace": 0.25})
     fig.patch.set_facecolor(SURFACE)
@@ -516,8 +601,9 @@ def plot_subspace(sim: dict, path: str | Path | None = None, label_a: str = "r=8
     cb.ax.tick_params(labelsize=7, colors=INK_2, length=0)
     cb.outline.set_visible(False)
     cb.set_label("φ(i, j)", fontsize=8, color=INK_2)
-    fig.suptitle(f"Subspace similarity, layer {sim['layer']} of {sim['n_layers']} "
-                 f"(paper eq. 4)", x=0.02, ha="left", fontsize=10.5, color=INK, y=1.04)
+    side = SIDES.get(sim.get("side", "input"), "")
+    fig.suptitle(f"Subspace similarity (paper eq. 4), layer {sim['layer']} of {sim['n_layers']}, {side}",
+                 x=0.02, ha="left", fontsize=10, color=INK, y=1.04)
     if path:
         Path(path).parent.mkdir(parents=True, exist_ok=True)
         fig.savefig(path, facecolor=SURFACE, bbox_inches="tight")

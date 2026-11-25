@@ -210,3 +210,6 @@ def test_adapter_loads_for_subspace_analysis(setup, tmp_path):
     sim = an.subspace_similarity(a8, a16)
     P = sim["phi"]["q_proj"]
     assert P.shape == (8, 16) and P.min() >= -1e-9 and P.max() <= 1 + 1e-9
+    out = an.subspace_similarity(a8, a16, side="output")          # needs lora_B, trained away from 0
+    assert out["phi"]["v_proj"].shape == (8, 16) and out["summary"]["d"].iloc[1] == 32   # v: 1 KV head x 32
+    assert (out["summary"]["A_norm_vs_init"] > 0).all()
